@@ -1,4 +1,4 @@
-#Gateway Decommission SOP
+# Gateway Decommission SOP
 
-##Information before decommission
+## Information before decommission
 
