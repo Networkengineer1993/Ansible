@@ -13,7 +13,7 @@ NET17658-LAN-FARNBOROUGH.CE3#
 Issue was idenified in #dir flash:
 
 ```bash
-NET17658-LAN-FARNBOROUGH.CE3#dir 
+NET17658-LAN-FARNBOROUGH.CE3#dir flash:
 Directory of flash:/
 
 40510   -rw-          2097152  Dec 13 2024 05:29:28 +00:00  nvram_config_bkup
@@ -48,6 +48,128 @@ NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-rpboot.17
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-webui.17.09.06a.SPA.pkg
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-srdriver.17.09.06a.SPA.pkg
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-rpbase.17.09.06a.SPA.pkg
+```
+Once you delete new version files from flash: check if switch is running with current packages.conf
+
+```bash
+NET17658-LAN-FARNBOROUGH.CE3#more flash:packages.conf
+#! /usr/binos/bin/packages_conf.sh
+
+sha1sum: 3ba1c29a0bf3cb2fbbf818c8ca6203c2b0c2f60d
+
+sha256sum: 7ae8a8699c927a269ecb7777a35621961e9f5792e93d642cc59cc6ed3331a942
+
+# sha1sum above - used to verify that this file is not corrupted.
+#
+# package.conf: provisioned software file for build 2024-01-30_15.39
+#
+# NOTE: Editing this file by hand is not recommended. It is generated
+#       as part of the build process, and is subject to boot-time
+#       consistency checks. Automatically-produced package files are
+#       guaranteed to pass those checks. Manually-maintained ones are
+#       not. Because "nfs" and "mount" directives are processed first,
+#       regardless of their position in the file, the recommended
+#       approach is to keep a separate file containing JUST your
+#       personal "nfs" and "mount" directives, and to append it to the
+#       automatically-generated file.
+#
+#     Note further that when SHA-1 checksum verification is enabled,
+#     you will NOT be able to alter this file without updating the
+#     SHA-1 sum.
+
+#
+# This file can contain three types of entries:
+#
+
+#
+# NFS directives (optional)
+#     notes:    NFS directives are processed before all others (mount, iso).
+#               Multiple NFS directives may appear so long as they do not
+#               conflict -- that is, specify the same source or mountpoint.
+#     syntax:   nfs <IP ADDRESS>:<REMOTE_PATH> <LOCAL_MOUNTPOINT>
+#     example:  nfs 127.0.0.1:/auto/some/nfs/path /auto/some/nfs/path
+#
+
+#
+# mount directives (optional)
+#     notes:    mount directives are processed after 'nfs' and before 'iso'.
+#               One mount directive may appear for each F/S/B/P tuple
+#     syntax:   mount FRU SLOT BAY   PACKAGE_NAME   NFS_PATH
+#     example:  mount rp 0 0 rp_base /auto/some/nfs/path/abs_soft/rp_base.ppc
+#
+#               The specified NFS_PATH must
+#               reference the NFS mounts created earlier.
+#
+#               Mount directives cause the package-specific mount link to
+#               be set to the specified path instead of to the mountpoint
+#               in sw for the corresponding ISO.
+#
+
+#
+# iso directives (mandatory)
+#     notes:    iso directives are processed last: any package for which
+#               a 'mount' directive does not appear will be mounted.
+#               One iso directive may appear for each F/S/B/P tuple.
+#     syntax:   iso FRU SLOT BAY   PACKAGE_NAME  PACKAGE_FILE.bin
+#     example:  iso rp 0 0 rp_base rp_base.ppc.bin
+#
+#               PACKAGE_FILE.bin is a path relative to the packages.conf
+#               file.  Although it supports sub-directories for development
+#               purposes, in deployment the files will always be managed
+#               as in the same directory as packages.conf so as to
+#               guarantee that name collisions cannot occur.
+#
+# Note that the RP 0/1 distinction is a convenience for development
+# and testing as it allows us to have a packages.conf describe a
+# SW load that varies depending on whether the RP finds itself in
+# slot 0 or 1.
+#
+# The ISSU process *must* update *both* RP slots simultaneously so that
+# the RP will behave predictably whichever slot it finds itself on [e.g.,
+# if package X is upgraded, and the RP is ejected and put into either
+# slot of a new chassis, we expect to see the upgraded X without regard
+# to slot].
+
+boot   rp 0 0   rp_boot cat9k_lite-rpboot.17.09.05.SPA.pkg
+iso   rp 0 0   rp_base cat9k_lite-rpbase.17.09.05.SPA.pkg
+iso   rp 0 0   rp_daemons cat9k_lite-rpbase.17.09.05.SPA.pkg
+iso   rp 0 0   rp_iosd cat9k_lite-rpbase.17.09.05.SPA.pkg
+iso   rp 0 0   rp_security cat9k_lite-rpbase.17.09.05.SPA.pkg
+iso   rp 0 0   rp_webui cat9k_lite-webui.17.09.05.SPA.pkg
+iso   rp 0 0   srdriver cat9k_lite-srdriver.17.09.05.SPA.pkg
+iso   fp 0 0   fp cat9k_lite-rpbase.17.09.05.SPA.pkg
+iso   cc 0 0   cc cat9k_lite-rpbase.17.09.05.SPA.pkg
+iso   cc 0 0   cc_srdriver cat9k_lite-srdriver.17.09.05.SPA.pkg
+
+# -start- superpackage .pkginfo
+#
+# pkginfo: Name: rp_super
+# pkginfo: BuildTime: 2024-01-30_15.39
+# pkginfo: ReleaseDate: Tue-30-Jan-24-23:00
+# pkginfo: .BuildArch: arm32
+# pkginfo: BootArchitecture: arm32
+# pkginfo: .BootArch: arm32
+# pkginfo: RouteProcessor: quake
+# pkginfo: Platform: CAT9K_LITE
+# pkginfo: User: mcpre
+# pkginfo: PackageName: universalk9
+# pkginfo: Build: 17.09.05
+# pkginfo: .SupportedBoards: quake
+# pkginfo: .InstallModel: 
+# pkginfo: .PackageRole: rp_super
+# pkginfo: .RestartRole: rp_super
+# pkginfo: .UnifiedPlatformList: quake1,quake2
+# pkginfo: CardTypes: 
+# pkginfo: .CardTypes: 
+# pkginfo: .BuildPath: /nobackup/mcpre/s2c-build-ws/binos/linkfarm/quake_universalk9-stage/img/rp_super_universalk9
+# pkginfo: .Version: 17.09.05.0.6450.1706657994..Cupertino
+# pkginfo: .InstallVersion: 1.0.0
+# pkginfo: .InstallCapCommitSupport: yes
+# pkginfo: .PKGUID: 87e497acfdf1f96849b540e8d6c2b19bf647c220
+# -end- superpackage .pkginfo
+
+
+NET17658-LAN-FARNBOROUGH.CE3#
 ```
 
 Upgrade command
