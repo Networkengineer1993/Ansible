@@ -10,7 +10,7 @@ FAILED: add_activate_commit /mnt/sd3/user/cat9k_lite_iosxe.17.09.06a.SPA.bin Fri
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
 
-Issue was idenified in #dir flash: after copied new IOS image into flash we run this command #clear install state this was caused to extract the new IOS
+Issue was idenified in `#dir flash:` after copied new IOS image into flash we run this command `#clear install state` this was caused to extract the new IOS
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#dir flash:
