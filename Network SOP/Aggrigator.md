@@ -1,6 +1,6 @@
 # Aggrigator Circuit Decommission Process
 
-## Information Defore decommission
+## Information Before decommission
 
 ```bash
 NET18737-CHESHIRE.CE1
