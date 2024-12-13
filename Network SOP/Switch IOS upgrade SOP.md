@@ -8,5 +8,6 @@ sh ip int br
 sh run
 sh int status | in trunk
 sh process cpu
+dir flash:
 sh version | in Sof
 ```
