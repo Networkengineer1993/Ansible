@@ -2,6 +2,7 @@
 
 ##### During the cisco 9200 install mode switch firmware upgarde activity we have identify the new issue `[1] Switch 1 FAILED: /mnt/sd3/user requires 462703 KB of free space, but only 408260 KB is available)`
 
+
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#install add file flash:cat9k_lite_iosxe.17.09.06a.SPA.bin activate commit
 install_add_activate_commit: START Fri Dec 13 05:25:16 GMT 2024
@@ -12,6 +13,7 @@ NET17658-LAN-FARNBOROUGH.CE3#
 ```
 
 ##### Issue was idenified in `#dir flash:` after copied new IOS image into flash we run this command `#clear install state` this was caused to extract the new IOS
+
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#dir flash:
@@ -42,6 +44,7 @@ Directory of flash:/
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
 ##### Removed new IOS SPA.pkg files by using below given commands in flash memory then it allowed us to upgarde the switch
+
 ```bash
 
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite_iosxe.17.09.06a.SPA.conf
