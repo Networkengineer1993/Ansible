@@ -1,5 +1,5 @@
 # Install Mode Cisco Switch Upgrade Issue
-#### During the cisco 9200 install mode switch firmware upgarde activity we have identify the new issue `[1] Switch 1 FAILED: /mnt/sd3/user requires 462703 KB of free space, but only 408260 KB is available)`
+##### During the cisco 9200 install mode switch firmware upgarde activity we have identify the new issue `[1] Switch 1 FAILED: /mnt/sd3/user requires 462703 KB of free space, but only 408260 KB is available)`
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#install add file flash:cat9k_lite_iosxe.17.09.06a.SPA.bin activate commit
@@ -10,7 +10,7 @@ FAILED: add_activate_commit /mnt/sd3/user/cat9k_lite_iosxe.17.09.06a.SPA.bin Fri
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
 
-#### Issue was idenified in `#dir flash:` after copied new IOS image into flash we run this command `#clear install state` this was caused to extract the new IOS
+##### Issue was idenified in `#dir flash:` after copied new IOS image into flash we run this command `#clear install state` this was caused to extract the new IOS
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#dir flash:
@@ -40,7 +40,7 @@ Directory of flash:/
 1956839424 bytes total (355348480 bytes free)
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
-#### Removed new IOS SPA.pkg files by using below given commands in flash memory then it allowed us to upgarde the switch
+##### Removed new IOS SPA.pkg files by using below given commands in flash memory then it allowed us to upgarde the switch
 ```bash
 
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite_iosxe.17.09.06a.SPA.conf
@@ -49,7 +49,7 @@ NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-webui.17.
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-srdriver.17.09.06a.SPA.pkg
 NET17658-LAN-FARNBOROUGH.CE3#delete /force /recursive flash:cat9k_lite-rpbase.17.09.06a.SPA.pkg
 ```
-#### Once you delete new version files from flash: check if switch is running with current packages.conf
+##### Once you delete new version files from flash: check if switch is running with current packages.conf
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#more flash:packages.conf
@@ -172,7 +172,7 @@ iso   cc 0 0   cc_srdriver cat9k_lite-srdriver.17.09.05.SPA.pkg
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
 
-#### Upgrade command
+##### Upgrade command
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#install add file flash:cat9k_lite_iosxe.17.09.06a.SPA.bin activate commit
@@ -226,7 +226,7 @@ SUCCESS: install_add_activate_commit Fri Dec 13 05:54:19 GMT 2024
 NET17658-LAN-FARNBOROUGH.CE3#client_loop: send disconnect: Broken pipe
 ell1-jumpbox:
 ```
-#### Post device reboot cisco switch successfully upgrade with new standard version
+##### Post device reboot cisco switch successfully upgrade with new standard version
 
 ```bash
 NET17658-LAN-FARNBOROUGH.CE3#show version | i Soft
@@ -234,7 +234,7 @@ Cisco IOS XE Software, Version 17.09.06a
 Cisco IOS Software [Cupertino], Catalyst L3 Switch Software (CAT9K_LITE_IOSXE), Version 17.9.6a, RELEASE SOFTWARE (fc1)
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
-#### For more information follow this cisco link
+##### For more information follow this cisco link
 [Link-1](https://community.cisco.com/t5/switching/cisco-catalyst-9200-down-grade-problem/td-p/4955340)
 [Link-2](https://community.cisco.com/t5/switching/cisco-9200-ios-out-of-space/td-p/4161212)
 
