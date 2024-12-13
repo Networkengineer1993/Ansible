@@ -1,6 +1,6 @@
 # Gateway Circuit Decommission SOP
 
-### Information before decommission
+#### Information before decommission
 
 ```bash
 NET18737-CHESHIRE.CE1
