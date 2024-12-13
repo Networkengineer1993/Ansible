@@ -1,4 +1,4 @@
-# Gateway Decommission SOP
+# Gateway Circuit Decommission SOP
 
 ### Information before decommission
 
