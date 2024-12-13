@@ -234,4 +234,6 @@ Cisco IOS XE Software, Version 17.09.06a
 Cisco IOS Software [Cupertino], Catalyst L3 Switch Software (CAT9K_LITE_IOSXE), Version 17.9.6a, RELEASE SOFTWARE (fc1)
 NET17658-LAN-FARNBOROUGH.CE3#
 ```
+## For more information follow this cisco link
+[Documentation](https://community.cisco.com/t5/switching/cisco-catalyst-9200-down-grade-problem/td-p/4955340)
 
