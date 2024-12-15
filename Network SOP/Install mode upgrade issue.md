@@ -1,6 +1,6 @@
 # Install Mode Cisco Switch Upgrade Issue
 
-##### During the cisco 9200 install mode switch firmware upgarde activity we have identify the new issue `[1] Switch 1 FAILED: /mnt/sd3/user requires 462703 KB of free space, but only 408260 KB is available)`
+##### During the cisco 9200 install mode switch firmware upgarde activity we have identify the new issue `[1] Switch 1 FAILED: /mnt/sd3/user requires 462703 KB of free space, but only 408260 KB is available`
 
 
 ```bash
