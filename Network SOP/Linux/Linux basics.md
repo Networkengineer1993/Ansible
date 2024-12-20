@@ -1,4 +1,21 @@
 # Linux basics
+### Inportant commands
+```bash
+cd
+pwd
+ls
+cp
+mv
+rm
+echo
+cat
+less
+grep
+mkdir
+touch
+chmod
+man + help
+```
 
 ## Create a new folder in Linux
 
