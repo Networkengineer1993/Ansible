@@ -17,6 +17,7 @@ cat   (to see the configuration inside that file)
 chmod (to give permissions) (chmod +x)
 vim   (text editor)
 ./    (Used for exicute the files)
+#!/bin/bash  (The line #!/bin/bash is called a shebang or hashbang. It specifies the interpreter that should be used to execute the script.)
 man + help
 ```
 
