@@ -16,6 +16,7 @@ nano  (edit the files)
 cat   (to see the configuration inside that file)
 chmod (to give permissions) (chmod +x)
 vim   (text editor)
+./    (Used for exicute the files)
 man + help
 ```
 
