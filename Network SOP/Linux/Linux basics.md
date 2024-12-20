@@ -28,7 +28,7 @@ cisco_commands
 
 ```bash
 root@DESKTOP-V421QNR:~# cd cisco_commands/
-root@DESKTOP-V421QNR:~/cisco_commands# nano switch_commands.txt
+root@DESKTOP-V421QNR:~/cisco_commands# touch switch_commands.txt
 root@DESKTOP-V421QNR:~/cisco_commands# ls
 switch_commands.txt
 ```
@@ -38,7 +38,8 @@ switch_commands.txt
 ```bash
 root@DESKTOP-V421QNR:~/cisco_commands# nano switch_commands.txt
 root@DESKTOP-V421QNR:~/cisco_commands# (Once you enter data to save this follow below commands)
-
+Once you finish, enter esc button :wq hit the enter button to save it
+or
 Once you finish, press Ctrl + O to save the file.
 Press Enter to confirm the filename.
 Press Ctrl + X to exit the editor.
