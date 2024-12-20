@@ -1,21 +1,22 @@
 # Linux basics
 ### Inportant commands
-```bash
-cd
+
+[cd](https://cway.cisco.com/sncheck/)
 pwd
-ls
-cp
-mv
-rm
-echo
-cat
-less
-grep
-mkdir
-touch
+ls    (to see the inside created directory)
+cp    (copy)
+mv    (move)
+rm    (remove)
+echo  (comment)
+less 
+grep  (filter)
+mkdir (create a Directory)
+touch (create a file)
+nano  (edit the files)
+cat   (to see the configuration inside that file)
 chmod
 man + help
-```
+
 
 ## Create a new folder in Linux
 
