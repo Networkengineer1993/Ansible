@@ -1,7 +1,7 @@
 # Linux basics
 ### Inportant commands
-
-[cd](https://cway.cisco.com/sncheck/)
+```bash
+cd    (to change the fdirectory)
 pwd
 ls    (to see the inside created directory)
 cp    (copy)
@@ -16,7 +16,7 @@ nano  (edit the files)
 cat   (to see the configuration inside that file)
 chmod
 man + help
-
+```
 
 ## Create a new folder in Linux
 
