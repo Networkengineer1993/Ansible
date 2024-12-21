@@ -22,6 +22,37 @@ vim   (text editor)
 man + help
 ```
 
+## Linux version details
+
+```bash
+root@DESKTOP-V421QNR:~# cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.1 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+root@DESKTOP-V421QNR:~#
+```
+[or]
+
+```bash
+root@DESKTOP-V421QNR:~# lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.1 LTS
+Release:        24.04
+Codename:       noble
+root@DESKTOP-V421QNR:~#
+```
+
 ## Create a new folder in Linux
 
 ```bash
