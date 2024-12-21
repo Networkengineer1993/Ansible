@@ -1,6 +1,7 @@
 # Linux basics
 ### Inportant commands
 ```bash
+cat /etc/os-release (or)  lsb_release -a  (To see the current version of linux)
 cd    (to change the fdirectory)
 pwd
 ls    (to see the inside created directory)
