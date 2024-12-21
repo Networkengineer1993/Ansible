@@ -6,7 +6,7 @@ cd    (to change the fdirectory)
 pwd
 ls    (to see the inside created directory)
 cp    (copy)
-mv    (move)
+mv    (used for move & rename the file)
 rm    (remove)
 echo  (comment)
 less 
